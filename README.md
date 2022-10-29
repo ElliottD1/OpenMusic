@@ -7,7 +7,7 @@ Upload Music
 Play Music  
 Remove Music  
 List all Songs  
-##NOTICE
+#NOTICE
 Make sure to download VLC 64 bit, not 32 bit!
 
 ## License
