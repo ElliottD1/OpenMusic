@@ -8,7 +8,7 @@ Play Music
 Remove Music  
 List all Songs 
 # NOTICE
-Make sure to download VLC 64 bit, not 32 bit!
+Make sure to download VLC 64 bit, not 32 bit
 
 ## License
 [MIT] (https://choosealicense.com/licenses/mit/)
