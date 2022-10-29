@@ -11,4 +11,4 @@ List all Songs
 Make sure to download VLC 64 bit, not 32 bit
 
 ## License
-[MIT] (https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/)
