@@ -6,8 +6,8 @@ Open Source Music Library for the Terminal
 Upload Music  
 Play Music  
 Remove Music  
-List all Songs  
-#NOTICE
+List all Songs 
+# NOTICE
 Make sure to download VLC 64 bit, not 32 bit!
 
 ## License
