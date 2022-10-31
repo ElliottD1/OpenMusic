@@ -36,16 +36,16 @@ def help():
 def leave():
     print("Thank you!")
 def choose_song():
-    jsonfloc = os.path.abspath("songs.json")
-    with open(jsonfloc, 'r') as file:
-        data = json.load(file)
-    user=input("What song do you want to play?:")
-    user=user.lower()
-    for dict in data['songs']:
-        if user in dict["SongName"]:
-            songpath=(dict['Path'])
-            print("Playing "+user)
-            M_player(songpath)
+        jsonfloc = os.path.abspath("songs.json")
+        with open(jsonfloc, 'r') as file:
+            data = json.load(file)
+        user=input("What song do you want to play?:")
+        user=user.lower()
+        for dict in data['songs']:
+            if user in dict["SongName"]:
+                songpath=(dict['Path'])
+                print("Playing "+user)
+                M_player(songpath)
 def remove():
     try:
         filename = os.path.abspath("songs.json")
@@ -87,37 +87,48 @@ def appendsong():
 
 def alphabeticsort():
     appendsong()
-    list=[]
-    i = 0
     songordered=sorted(songsunordered)
+    letters=[]
     for songs in songordered:
-        if songs[:1].upper() in list:
-            pass
-        else:
-            list.append(songs[:1].upper())
-    for let in list:
+        adv=["the ",'a ','an ']
+        for ad in adv:
+            if ad in songs:
+                length=len(ad)
+                n=songs[length:]
+                if n in letters:
+                    pass
+                else:
+                    letters.append(n[:1].upper())
+                    break
+            else:
+                if songs[:1].upper() in letters:
+                    pass
+                else:
+                    letters.append(songs[:1].upper())
+                    break
+    for let in letters:
         print(let+")")
-        for song in songordered:
-            if song[:1].upper()==let:
-                print(song)
+        for songs in songordered:
+            adv=["the ",'a ','an ']
+            for ad in adv:
+                if ad in songs:
+                    length=len(ad)
+                    n=songs[length:]
+                    n=n[:1].upper()
+                    if n==let:
+                        print(songs)
+                        break
+                else:
+                    n=songs[:1].upper()
+                    if n==let:
+                        print(songs)
+                        break
 
     index()
 
 def sorter(dstpath):
-    adverb=["the","a","an"]
-    list = []
     songname = input("What do you want to call the song?:")
     songname=songname.lower()
-    list = songname.split()
-    i=0
-    for words in list:
-        if i==0:
-            if words in adverb:
-                list.remove(words)
-                i=1
-    songname = ""
-    for word in list:
-        songname += word + " "
     songname.capitalize()
     if songname[-1:]==" ":
         songname=songname[:-1]
