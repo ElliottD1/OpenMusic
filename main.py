@@ -40,6 +40,7 @@ def choose_song():
     with open(jsonfloc, 'r') as file:
         data = json.load(file)
     user=input("What song do you want to play?:")
+    user=user.lower()
     for dict in data['songs']:
         if user in dict["SongName"]:
             songpath=(dict['Path'])
