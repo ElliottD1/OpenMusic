@@ -10,7 +10,40 @@ print("""
 ░╚════╝░╚═╝░░░░░╚══════╝╚═╝░░╚══╝╚═╝░░░░░╚═╝░╚═════╝░╚═════╝░╚═╝░╚════╝░
 -By Elliott Day
 """)
-
+def queue():
+    jsonfloc = os.path.abspath("songs.json")
+    list = []
+    with open(jsonfloc, 'r') as file:
+        data = json.load(file)
+    i = 0
+    while i == 0:
+        user = input("(esc to break)What Song will be Added to Queue:")
+        user = user.lower()
+        if user == "esc":
+            i==1
+            break
+        else:
+            list.append(user)
+    for songs in list:
+        for dict in data['songs']:
+            if songs in dict["SongName"]:
+                songpath = (dict['Path'])
+                print("Playing " + songs)
+                media_player = vlc.MediaPlayer()
+                media = vlc.Media(songpath)
+                media_player.set_media(media)
+                media_player.play()
+                playfe(media_player)
+    index()
+def playfe(media_player):
+    playf=input()
+    if playf=='skip':
+        media_player.set_pause(1)
+    else:
+        media_player.set_pause(1)
+        input()
+        media_player.set_pause(0)
+        playfe(media_player)
 def M_player(path):
     media_player = vlc.MediaPlayer()
     media = vlc.Media(path)
@@ -169,6 +202,8 @@ def index():
         leave()
     elif user=="remove":
         remove()
+    elif user=="queue":
+        queue()
     else:
         print("Uknown Command")
         index()
