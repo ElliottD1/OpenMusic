@@ -64,7 +64,7 @@ def pause(media_player):
 
 def help():
     print("Thank you for choosing OpenMusic as your music libaray!")
-    print("TYPE:\n upload-UPLOAD SOUND FILE\n play-PLAY SONG\n list-LIST SONGS\n remove-REMOVE A SONG (Deletes permanently)\n leave-LEAVE OpenMusic")
+    print("TYPE:\n upload-UPLOAD SOUND FILE\n play-PLAY SONG\n list-LIST SONGS\n remove-REMOVE A SONG (Deletes permanently)\n leave-LEAVE OpenMusic\n queue-QUEUE MUSIC TO PLAY IN ORDER")
     index()
 def leave():
     print("Thank you!")
